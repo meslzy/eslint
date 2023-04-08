@@ -1,0 +1,197 @@
+const {off, warn, error} = require("./utils/value");
+
+const possibleProblems = {
+    "array-callback-return": [
+        warn, {
+            allowImplicit: true,
+        }
+    ],
+    "constructor-super": error,
+    "for-direction": error,
+    "getter-return": [
+        error, {
+            allowImplicit: true,
+        }
+    ],
+    "no-async-promise-executor": off,
+    "no-await-in-loop": off,
+    "no-class-assign": error,
+    "no-compare-neg-zero": error,
+    "no-cond-assign": [
+        error, "except-parens",
+    ],
+    "no-const-assign": error,
+    "no-constant-binary-expression": error,
+    "no-constant-condition": [
+        error, {
+            checkLoops: false,
+        },
+    ],
+    "no-constructor-return": error,
+    "no-control-regex": off,
+    "no-debugger": error,
+    "no-dupe-args": error,
+    "no-dupe-else-if": error,
+    "no-dupe-keys": error,
+    "no-duplicate-case": error,
+    "no-duplicate-imports": off,
+    "no-empty-character-class": error,
+    "no-empty-pattern": error,
+    "no-ex-assign": error,
+    "no-fallthrough": error,
+    "no-func-assign": error,
+    "no-import-assign": error,
+    "no-invalid-regexp": error,
+    "no-irregular-whitespace": [
+        error, {
+            skipStrings: false,
+        },
+    ],
+    "no-loss-of-precision": error,
+    "no-misleading-character-class": error,
+    "no-new-native-nonconstructor": error,
+    "no-new-symbol": error,
+    "no-obj-calls": error,
+    "no-promise-executor-return": off,
+    "no-prototype-builtins": off,
+    "no-self-assign": error,
+    "no-self-compare": error,
+    "no-setter-return": error,
+    "no-sparse-arrays": error,
+    "no-this-before-super": error,
+    "no-undef": error,
+    "no-unexpected-multiline": error,
+    "no-unreachable": warn,
+    "no-unreachable-loop": off,
+    "no-unsafe-finally": error,
+    "no-unsafe-negation": error,
+    "no-unsafe-optional-chaining": [
+        error, {
+            disallowArithmeticOperators: true,
+        }
+    ],
+    "no-useless-backreference": error,
+    "use-isnan": error,
+    "valid-typeof": [
+        error, {
+            requireStringLiterals: true,
+        }
+    ],
+};
+
+const suggestions = {
+    "curly": [
+        error, "multi-line",
+    ],
+    "eqeqeq": [
+        error, "always",
+    ],
+    "no-bitwise": error,
+    "no-else-return": [
+        error, {
+            allowElseIf: true,
+        },
+    ],
+    "no-empty": warn,
+    "no-empty-function": warn,
+    "no-extra-boolean-cast": error,
+    "no-floating-decimal": error,
+    "no-global-assign": error,
+    "no-lonely-if": error,
+    "no-unused-labels": error,
+    "no-useless-catch": error,
+    "no-useless-constructor": error,
+    "no-useless-escape": warn,
+    "prefer-const": error,
+    "prefer-object-has-own": error,
+    "prefer-rest-params": error,
+    "require-await": error,
+    "require-yield": error,
+    "sort-imports": [
+        error, {
+            ignoreCase: true,
+            ignoreDeclarationSort: true,
+            ignoreMemberSort: true,
+            allowSeparatedGroups: true,
+            memberSyntaxSortOrder: [
+                "all",
+                "single",
+                "multiple",
+                "none",
+            ],
+        },
+    ],
+    "spaced-comment": [
+        error, "always"
+    ],
+};
+
+const layoutFormatting = {
+    "arrow-parens": [
+        error, "always",
+    ],
+    "arrow-spacing": [
+        error, {
+            before: true,
+            after: true,
+        },
+    ],
+    "block-spacing": [
+        error, "always",
+    ],
+    "brace-style": [
+        error, "1tbs",
+    ],
+    "comma-spacing": [
+        error, {
+            before: false,
+            after: true,
+        },
+    ],
+    "generator-star-spacing": [
+        error, {
+            before: true,
+            after: true,
+        },
+    ],
+    "jsx-quotes": [
+        error, "prefer-double",
+    ],
+    "key-spacing": [
+        error, {
+            beforeColon: false,
+            afterColon: true,
+        },
+    ],
+    "keyword-spacing": error,
+    "linebreak-style": [
+        error, "unix",
+    ],
+    "no-multi-spaces": error,
+    "no-multiple-empty-lines": [
+        error, {
+            max: 2,
+        },
+    ],
+    "quotes": [
+        error, "double",
+    ],
+    "semi": [
+        error, "always",
+    ],
+    "semi-spacing": [
+        error, {
+            before: false,
+            after: true,
+        },
+    ],
+    "template-curly-spacing": [
+        error, "always",
+    ],
+};
+
+module.exports = {
+    ...possibleProblems,
+    ...suggestions,
+    ...layoutFormatting,
+};
