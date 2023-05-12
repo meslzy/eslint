@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "rootDir": "source",
+    "outDir": "dist",
+    //,
+    "baseUrl": "source",
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "source",
+    "rosepack.ts"
+  ],
+  "exclude": [
+    "dist"
+  ]
+}
