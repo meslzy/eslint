@@ -1,0 +1,41 @@
+{
+  "name": "@meslzy/eslint",
+  "description": "shared eslint configuration",
+  "version": "1.0.6",
+  "author": {
+    "name": "meslzy",
+    "email": "i@meslzy.com",
+    "url": "https://meslzy.com"
+  },
+  "type": "module",
+  "main": "eslint.config.js",
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^9",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-perfectionist": "^3.0.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc-14a4699f-20240725",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.17.0",
+    "@eslint/compat": "^1.1.1"
+  },
+  "peerDependencies": {
+    "eslint": "^9"
+  },
+  "overrides": {
+    "eslint": "$eslint"
+  },
+  "files": [
+    "eslint.config.js"
+  ],
+  "keywords": [
+    "meslzy",
+    "eslint"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "mit"
+}
