@@ -6,7 +6,7 @@ import unicorn from "eslint-plugin-unicorn";
 import stylistic from "@stylistic/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
 import globals from "globals";
-import {config} from "typescript-eslint";
+import { config } from "typescript-eslint";
 
 const defineRules = (id, rules) => {
   return Object.keys(rules).reduce((acc, key) => {
@@ -25,7 +25,7 @@ const scriptConfig = config({
     "**/*.ts",
     "**/*.tsx",
   ],
-  ignores: [...ignorePatterns],
+  ignores: ignorePatterns,
   languageOptions: {
     globals: globals.builtin,
     parser: typescriptParser,
@@ -36,7 +36,6 @@ const scriptConfig = config({
   plugins: {
     unicorn,
     stylistic,
-    reactHooks,
     perfectionist,
   },
   rules: {
@@ -183,10 +182,6 @@ const scriptConfig = config({
         },
       }],
     }),
-    ...defineRules("reactHooks", {
-      "rules-of-hooks": ["error"],
-      "exhaustive-deps": ["warn"],
-    }),
     ...defineRules("perfectionist", {
       "sort-imports": ["error", {
         "type": "alphabetical",
@@ -258,9 +253,37 @@ const scriptConfig = config({
   },
 });
 
+const reactConfig = config({
+  name: "react",
+  ignores: ignorePatterns,
+  files: [
+    "**/*.jsx",
+    "**/*.tsx",
+  ],
+  plugins: {
+    reactHooks,
+  },
+  rules: {
+    ...defineRules("reactHooks", {
+      "rules-of-hooks": ["error"],
+      "exhaustive-deps": ["warn"],
+    }),
+  },
+});
+
 const markdownConfig = config({
   name: "markdown",
-  files: ["**/*.md"],
+  ignores: ignorePatterns,
+  files: [
+    "**/*.md",
+  ],
+  languageOptions: {
+    globals: globals.builtin,
+    parser: typescriptParser,
+    parserOptions: {
+      jsx: true,
+    },
+  },
   plugins: {
     markdown,
   },
@@ -274,5 +297,6 @@ const markdownConfig = config({
 
 export default config(
   ...scriptConfig,
+  ...reactConfig,
   ...markdownConfig,
 );

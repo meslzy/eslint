@@ -7,6 +7,7 @@
 ## Getting Started (✅)
 
 - ### Installation (⏬)
+
   - `npm i eslint @meslzy/eslint --save-dev`
 
 - ### Usage  (🌠)
