@@ -1,0 +1,42 @@
+{
+  "name": "@meslzy/eslint",
+  "description": "shared eslint configuration",
+  "version": "2.0.0",
+  "author": {
+    "name": "meslzy",
+    "email": "i@meslzy.com",
+    "url": "https://meslzy.com"
+  },
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsup",
+    "lint": "eslint --fix"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^2.12.1",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-perfectionist": "^4.3.0",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "globals": "^15.13.0",
+    "typescript-eslint": "^8.18.0"
+  },
+  "devDependencies": {
+    "@meslzy/tsconfig": "^0.2.8",
+    "tsup": "^8.3.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "meslzy",
+    "eslint"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "mit"
+}
